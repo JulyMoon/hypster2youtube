@@ -3,6 +3,7 @@ using System.IO;
 using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Text;
 
 using Google.Apis.Auth.OAuth2;
 using Google.Apis.Services;
@@ -10,22 +11,28 @@ using Google.Apis.Upload;
 using Google.Apis.Util.Store;
 using Google.Apis.YouTube.v3;
 using Google.Apis.YouTube.v3.Data;
-using System.Text;
+
 using Hypster2Youtube.Properties;
 
 namespace Hypster2Youtube
 {
     class Program
     {
+        private static readonly string AppName = Assembly.GetExecutingAssembly().GetName().Name;
+        private const string playlistLink = @"http://hypster.com/playlists/userid/5049121";
+
         [STAThread]
         static void Main(string[] args)
         {
-            Console.WriteLine("Hypster2Youtube");
+            foreach (var song in new HypsterPlaylist(playlistLink).SongIds)
+                Console.WriteLine(song);
+
+            /*Console.WriteLine("Hypster2Youtube");
             Console.WriteLine("==================================");
 
             try
             {
-                new Program().Run().Wait();
+                Run().Wait();
             }
             catch (AggregateException ex)
             {
@@ -33,13 +40,13 @@ namespace Hypster2Youtube
                 {
                     Console.WriteLine("Error: " + e.Message);
                 }
-            }
+            }*/
 
             Console.WriteLine("Press any key to continue...");
             Console.ReadKey();
         }
 
-        private async Task Run()
+        private static async Task Run()
         {
             UserCredential credential;
             using (var stream = GenerateStreamFromString(Resources.client_secrets_json))
@@ -49,14 +56,14 @@ namespace Hypster2Youtube
                     new[] { YouTubeService.Scope.Youtube },
                     "user",
                     CancellationToken.None,
-                    new FileDataStore(GetType().ToString())
+                    new FileDataStore(AppName)
                 );
             }
 
             var youtubeService = new YouTubeService(new BaseClientService.Initializer()
             {
                 HttpClientInitializer = credential,
-                ApplicationName = GetType().ToString()
+                ApplicationName = AppName
             });
 
             // Create a new, private playlist in the authorized user's channel.

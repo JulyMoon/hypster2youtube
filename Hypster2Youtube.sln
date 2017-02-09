@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "youtube-stuff", "youtube-stuff\youtube-stuff.csproj", "{C74AA508-0A91-41BA-8D43-A5FCAD0FABB2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hypster2Youtube", "youtube-stuff\Hypster2Youtube.csproj", "{C74AA508-0A91-41BA-8D43-A5FCAD0FABB2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -7,8 +7,8 @@
     <ProjectGuid>{C74AA508-0A91-41BA-8D43-A5FCAD0FABB2}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>youtube_stuff</RootNamespace>
-    <AssemblyName>youtube-stuff</AssemblyName>
+    <RootNamespace>Hypster2Youtube</RootNamespace>
+    <AssemblyName>Hypster2Youtube</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
