@@ -60,6 +60,7 @@ namespace Hypster2Youtube
                 video.Snippet.ResourceId.Kind = "youtube#video";
                 video.Snippet.ResourceId.VideoId = songId;
                 video = await yt.PlaylistItems.Insert(video, "snippet").ExecuteAsync();
+                Console.Write('.');
             }
         }
 
