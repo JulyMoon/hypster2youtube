@@ -87,6 +87,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Youtube.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
